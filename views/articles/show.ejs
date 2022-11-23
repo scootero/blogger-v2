@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/styles.css" type="text/css">
+    <title>New Article</title>
+</head>
+
+<body>
+    <main>
+        <div class="articles-container">
+            <div class="article-wrapper">
+                <div class="article">
+                    <% if(user && article.author.equals(user._id)) { %>
+                        <a href="/articles/edit/<%=article.id %>">
+                            <% }%>
+                                <div class="article-title">
+                                    <%= article.title %>
+                                </div>
+                                <div class="article-body">
+
+                                    <%= article.body%>
+                                </div>
+
+                        </a>
+                        <div class="author">
+
+                            <%= article.author%>
+                        </div>
+                </div>
+            </div>
+
+            <a href="/articles">All Articles</a>
+        </div>
+
+    </main>
+</body>

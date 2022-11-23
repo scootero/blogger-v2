@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+        <textarea name="title" id="title" cols="30" rows="1" placeholder="Title"><%= article.title %></textarea>
+        <textarea name="body" id="body" cols="30" rows="1" placeholder="Write away"><%= article.body %></textarea>
+        <textarea name="tags" id="tags" cols="30" rows="1"
+            placeholder="Tags (coding, finance, news)"><%= article.tags %></textarea>
+        <button type="submit">Publish</button>
+    </form>
+</body>
+
+</html>
