@@ -1,4 +1,4 @@
-<div class="writer">
+<!-- <div class="writer">
     <div class="writer-container">
         <form action="/articles/new" class="articles-container" method="POST">
             <textarea class="writer-block" name="title" id="title" cols="30" rows="1" placeholder="Title"></textarea>
@@ -8,20 +8,39 @@
                 placeholder="Tags (coding, finance, news)"></textarea>
             <button class="writer-block" type="submit">Publish</button>
         </form>
-
-
-        <div class="writer-container">
-            <div class="input-container">
-                <h2>SideWriter</h2>
-                <form>
-                    <div class="input-field">
-                        <input type="text" name="" required="">
-                        <label>Title</label>
-                        <span></span>
-                    </div>
-                    <input class="btn-submit" type="submit" value="Publish" name="">
-                </form>
-            </div>
-        </div>
     </div>
-</div>
+</div> -->
+
+<!-- enter text area increase height -->
+<!-- https://stackoverflow.com/questions/454202/creating-a-textarea-with-auto-resize -->
+
+
+
+
+<article class="writer">
+
+    <a href="/articles/new"><i class="fa-sharp fa-solid fa-maximize"></i></a>
+    <div class="heading">
+        <h2>SideWriter</h2>
+    </div>
+    <form action="/articles/new" method="POST">
+        <div class="input-field">
+            <input class="input-title-font input-field_txt" type="text" name="title" id="title" required="">
+            <label class="lbl-lg">
+                Title
+            </label>
+            <span></span>
+        </div>
+        <div class="input-field">
+            <textarea class="input-body-font input-field_txt" id="article-body" type="text" name="body" id="body"
+                cols="20" rows="5" required=""></textarea>
+            <label class="lbl-med">Body</label>
+            <span></span>
+        </div>
+        <div class="btns-container">
+            <input class="btn-reg" type="submit" value="Publish" name="">
+            <a class="btn-reg" href="/">Cancel</a>
+        </div>
+    </form>
+
+</article>

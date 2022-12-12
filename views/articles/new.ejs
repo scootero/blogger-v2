@@ -6,26 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/writer.css" type="text/css">
     <title>Document</title>
+    <script src="/public/scripts/script.js"></script>
 </head>
 
 <body>
-
-    <!-- <%- include('./partials/_writer') %> -->
-
     <div class="writer-container">
-        <div class="input-container">
-            <h2>SideWriter</h2>
-            <form>
-                <div class="input-field">
-                    <input type="text" name="" required="">
-                    <label>Title</label>
-                    <span></span>
-                </div>
-                <input class="btn-submit" type="submit" value="Publish" name="">
-            </form>
-        </div>
+        <%- include('./partials/_writer') %>
     </div>
+
 </body>
 
 </html>

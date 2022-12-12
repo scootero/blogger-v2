@@ -41,7 +41,7 @@ app.set("view engine", "ejs");
 app.use((req, res, next) => {
   // console.log(req.session);
   res.locals.user = req.user;
-  console.log(res.locals.user);
+  // console.log(res.locals.user);
   next();
 });
 

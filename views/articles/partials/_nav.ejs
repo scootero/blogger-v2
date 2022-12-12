@@ -1,0 +1,12 @@
+<nav class="nav">
+
+    <div class="nav-login">
+
+        <% if(!user) { %>
+            <a href="/auth/login">LOGIN</a>
+            <a href="/auth/register">REGISTER</a>
+            <%} else { %>
+                <a href="/auth/logout">LOGOUT</a>
+                <% } %>
+    </div>
+</nav>

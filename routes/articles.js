@@ -14,31 +14,31 @@ const isLoggedIn = (req, res, next) => {
 };
 
 router.get("/", async (req, res) => {
-  const articles = await Article.find().sort({
+  const articles = await Article.find().populate("author").sort({
     createdAt: "desc",
   });
+
   res.render("../views/articles/index", { articles: articles });
 });
 
-router.get("/articles", async (req, res) => {
-  const articles = await Article.find().sort({
-    createdAt: "desc",
-  });
-  res.render("../views/articles/index", { articles: articles });
-});
+// router.get("/articles", async (req, res) => {
+//   const articles = await Article.find().populate("author").sort({
+//     createdAt: "desc",
+//   });
+//   res.render("../views/articles/index", { articles: articles });
+// });
 
 router.get("/articles/new", isLoggedIn, (req, res) => {
   res.render("../views/articles/new");
 });
 
 router.post("/articles/new", isLoggedIn, async (req, res) => {
+  req.body.author = req.user._id;
+  console.log(req.body);
   const newArticle = Article(req.body);
-  // console.log(typeof req.user);
-  newArticle.author = req.user._id;
-
+console.log(newArticle)
   try {
     const savedArticle = await newArticle.save();
-
     return res.render("../views/articles/show", { article: savedArticle });
   } catch (err) {
     console.log("failed here");
@@ -48,7 +48,7 @@ router.post("/articles/new", isLoggedIn, async (req, res) => {
 });
 router.get("/articles/:id", async (req, res) => {
   try {
-    const article = await Article.findById(req.params.id);
+    const article = await Article.findById(req.params.id).populate("author");
     res.render("../views/articles/show", { article: article });
   } catch (err) {
     res.status(500).json(err);
@@ -69,7 +69,7 @@ router.put("/articles/:id", async (req, res) => {
 
 router.get("/articles/edit/:id", async (req, res) => {
   try {
-    const article = await Article.findById(req.params.id);
+    const article = await Article.findById(req.params.id).populate("author");
 
     res.render("../views/articles/edit", { article: article });
   } catch (err) {

@@ -6,64 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="/public/css/writer.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>New Article</title>
 </head>
+<script src="../../scripts/script.js"></script>
 
 <body>
 
     <div class="container-all">
 
-        <aside class="aside aside-nav">
-            <div class="auth-links">
-                <% if(!user) { %>
-                    <a href="/auth/login">LOGIN</a>
-                    <a href="/auth/register">REGISTER</a>
-                    <%} else { %>
-                        <a href="/auth/logout">LOGOUT</a>
-                        <% } %>
-            </div>
-        </aside>
-        <main>
-            <div class="articles-container">
+        <!-- <aside class="aside"> -->
+        <%- include('./partials/_nav') %>
+            <!-- </aside> -->
 
-                
+            <div class="main-container">
 
-                <a href="/articles/new">New</a>
 
-                <% articles.forEach(article=> { %>
-                    <div class="article-wrapper">
-                        <div class="article">
-                            <div class="article-title">
-                                <%= article.title %>
-                            </div>
-                            <div class="article-body">
-                                <%= article.body%>
-                            </div>
-                            <div class="read-more">
-                                <a href="/articles/<%= article.id %>">Read More</a>
-                                <div class="author">
 
-                                    <%= article.author%>
+                <div class="articles-container">
+                    <% articles.forEach(article=> { %>
+                        <div class="article-wrapper">
+                            <div class="article">
+                                <div class="article-title">
+                                    <%= article.title %>
+                                </div>
+                                <div class="article-author">
+                                    - <%= article.author.username%>
+                                </div>
+                                <div class="articsle-body">
+                                    <%= article.body%>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-
-                    <% }); %>
-
-
+                        </div <% }); %>
+                </div>
             </div>
-        </main>
-        <aside class="aside aside-writer">
-            <div class="writer">
+            </main>
+            <aside class="aside aside-writer">
+
                 <%- include('./partials/_writer') %>
-            </div>
-        </aside>
+
+            </aside>
 
     </div>
 
 
 </body>
+<script src="../../scripts/script.js"></script>
 
 </html>

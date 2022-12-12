@@ -13,6 +13,7 @@ const articleSchema = new mongoose.Schema(
     tags: {
       type: String,
     },
+
     author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

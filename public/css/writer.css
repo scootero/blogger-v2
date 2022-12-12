@@ -1,0 +1,172 @@
+.new-writer-page {
+}
+.lbl-lg {
+  font-size: 30px;
+}
+.lbl-med {
+  font-size: 18px;
+}
+
+.writer-container {
+  width: 50%;
+  margin: auto;
+}
+.writer {
+  margin: auto;
+  /* width: 100%; */
+  /* height: 100%; */
+  position: relative;
+}
+.heading {
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 20px;
+}
+/* FORM */
+
+.btns-container {
+  /* display: flex; */
+  justify-content: space-evenly;
+  width: 100%;
+
+  margin-top: 200px;
+  display: flex;
+}
+.btn-reg {
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--btn-font);
+
+  border: none;
+
+  padding: 10px 25px;
+  background: #333;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  background: #00bcd4;
+}
+
+/* inputs */
+
+.input-field {
+  /* margin-top: 20px; */
+  position: relative;
+  height: 60px;
+  width: 100%;
+
+  /* margin-bottom: 30px; */
+}
+.input-field_txt {
+  color: white;
+  /* font-size: 40px; */
+  padding: 20px;
+}
+.input-title-font {
+  font-size: 34px;
+}
+.input-body-font {
+  font-size: 24px;
+}
+
+.input-field input[type="text"] {
+  position: relative;
+  background: transparent;
+  border: none;
+
+  width: 100%;
+  height: 100%;
+}
+
+.input-field textarea {
+  white-space: pre-wrap;
+  width: 100%;
+  /* background-color: pink; */
+  background: transparent;
+  border: none;
+  color: white;
+  resize: none;
+  padding-top: 10px;
+  line-height: 35px;
+}
+
+.input-field label {
+  position: absolute;
+
+  top: 20px;
+  left: 0;
+  color: #868686;
+
+  pointer-events: none;
+
+  transition: 0.8s;
+}
+.input-field input[type="text"]:focus + label,
+.input-field input[type="text"]:valid + label {
+  transform: translate(-70px, -10px) scale(0.7);
+  opacity: 0;
+  color: #fff;
+  padding: 4px 6px;
+}
+
+.input-field textarea[type="text"]:focus + label,
+.input-field textarea[type="text"]:valid + label {
+  transform: translate(-70px, -10px) scale(0.9);
+  color: #fff;
+  opacity: 0;
+  padding: 4px 6px;
+}
+
+.input-field span {
+  /* background-color: red; */
+  position: absolute;
+  background: rgba(255, 255, 255, 0.508);
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  /* margin-top: -40px; */
+  bottom: 0;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.input-field textarea:focus ~ span,
+.input-field textarea:valid ~ span {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.input-field span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00b0ff;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* COOL LINE BACK AND FORTH ANI */
+.input-field input[type="text"]:focus ~ span:before,
+.input-field input[type="text"]:valid ~ span:before {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+/* .input-field textarea:focus ~ span:before,
+.input-field textarea:valid ~ span:before {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+} */
+
+/* END SIDEWRITER */
